@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sap xep theo thu tu giam dan</title>
+</head>
+<body>
+<!--<input type="text" id="giaTri"> nhap vao cac phan tu cua mang <br>-->
+<!--<input type="button" value="Add" onclick="addElement()">-->
+<!--<input type="button" value="Display" onclick="displayElement()">-->
+<!--<p id="hienThi"></p>-->
+<script>
+    // //nhap vao cac so tao mang
+    // let arr = [];
+    // let x = 0;
+    //
+    // function addElement() {
+    //     arr[x] = +document.getElementById('giaTri').value;
+    //     x++;
+    //     document.getElementById('giaTri').value = ''
+    // }
+    //
+    // //hien thi toan bo mang
+    // function displayElement() {
+    //     document.getElementById('hienThi').innerHTML = 'mang arr = [' + arr + ']'
+    // }
+
+    arr = [5,8,1,3,2,9,5]
+
+    function arrange() {
+        let temp;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1;j<arr.length;j++) {
+            if (arr[i]<arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            }
+                }
+    }
+    arrange()
+    console.log(arr)
+
+
+</script>
+</body>
+</html>

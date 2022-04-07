@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh xem co bao nhieu so nguyen lon hon 10</title>
+</head>
+<body>
+<input type="text" id="giaTri"> nhap vao cac phan tu cua mang <br>
+<input type="button" value="Add" onclick="addElement()">
+<input type="button" value="Display" onclick="displayElement()">
+<p id="hienThi"></p>
+<p id="soCanTim"></p>
+<button id="soLuong" onclick="find()">so lon hon 10</button>
+<script>
+    //nhap vao cac so tao mang
+    let arr = [];
+    let x = 0;
+
+    function addElement() {
+        arr[x] = +document.getElementById('giaTri').value;
+        x++;
+        document.getElementById('giaTri').value = ''
+    }
+
+    //hien thi toan bo mang
+    function displayElement() {
+        document.getElementById('hienThi').innerHTML = 'mang arr = [' + arr + ']'
+    }
+
+    //tim so nguyen lon hon hoac bang 10
+    function find() {
+        let n = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                n = n + 1;
+                document.getElementById('soCanTim').innerHTML += 'so lon hon hoac bang 10 la: ' + arr[i] + '<br>';
+            }
+        }
+        document.getElementById('soLuong').innerHTML = n + ' so lon hon 10'
+
+    }
+
+
+</script>
+
+
+</body>
+</html>

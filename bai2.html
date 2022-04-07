@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hien thi phan tu lon nhat trong mang</title>
+</head>
+<body>
+<input type="text" id="giaTri"> nhap vao cac phan tu cua mang <br>
+<input type="button" value="Add" onclick="addElement()">
+<input type="button" value="Display" onclick="displayElement()">
+<p id="hienThi"></p>
+<script>
+    //nhap vao cac so tao mang
+    let arr = [];
+    let x = 0;
+
+    function addElement() {
+        arr[x] = +document.getElementById('giaTri').value;
+        x++;
+        document.getElementById('giaTri').value = ''
+    }
+
+    //hien thi toan bo mang
+    function displayElement() {
+        document.getElementById('hienThi').innerHTML = 'mang arr = [' + arr + ']'
+        let max = arr[0];
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i]
+            }
+        }
+        let index = arr.indexOf(max)
+        document.getElementById('hienThi').innerHTML = 'mang arr = [' + arr + ']' + "<br>" + "Gia tri lon nhat cua mang la: " + max + "<br>" + 'Index = ' + index;
+    }
+
+    // function findMax() {
+    //     let max = arr[0];
+    //     for (i = 0; i < arr.length; i++) {
+    //         if (a[i] > max) {
+    //             max = a[i]
+    //         }
+    //     }
+    //
+    // }
+
+
+</script>
+</body>
+</html>

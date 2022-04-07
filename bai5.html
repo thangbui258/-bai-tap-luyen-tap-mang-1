@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dem so nguyen am trong chuoi</title>
+</head>
+<body>
+<input id="giaTri"> Nhap cac phan tu cua mang
+<p><button onclick="addElement()">ADD</button></p>
+<p><button onclick="count()">thong tin mang</button></p>
+<p id="ketQua"></p>
+    <script>
+        //nhap vao cac so tao mang
+        let arr = [];
+        let x = 0;
+        function addElement() {
+            arr[x] = +document.getElementById('giaTri').value;
+            x++;
+            document.getElementById('giaTri').value = ''
+        }
+
+        //hien thi mang va dem so phan tu < 0 trong mang
+        function count() {
+            let n = 0;
+            for (let i = 0; i<arr.length; i++) {
+                if (arr[i]<0) {
+                    n = n+1
+                }
+            }
+            document.getElementById("ketQua").innerHTML = 'Mang vua nhap: arr = [' + arr + ']' + '<br>' + 'so phan tu nho hon 0 la: ' + n;
+        }
+
+
+
+
+    </script>
+</body>
+</html>
